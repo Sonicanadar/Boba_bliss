@@ -1,0 +1,1001 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Boba Bliss | Handcrafted Bubble Tea &amp; Milk Tea</title><meta name="description" content="Boba Bliss serves handcrafted milk teas, fruit infusions and bubble tea made with premium ingredients, fully customizable to your taste. Order online or visit us today."/><meta property="og:title" content="Boba Bliss | Handcrafted Bubble Tea &amp; Milk Tea"/><meta property="og:description" content="Handcrafted happiness in every pearl. Fresh ingredients, authentic flavors, customizable just for you."/><meta property="og:type" content="website"/><meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkBN1X6fFdO0WTIe3h5D7l2UQKqaEAGerdT_qDUt-zHRUcSPbk2Tac2mJfECTll2v9kw4mz_JYl1f9Ij0QT-o1j3ChtgQB65hnx7jDR36ETDQmcGH4aExmrrTJersid8jpdqEDltIWEiJPOLvhhUf7yjhKnN9cOQaJ-L7IHUA1cr1Q1btRqa8iwLEDu-RnfaEDTnIOI2TzN34Wp-6rluMp7kD2IyF0HfqWS4xpruo3AH-OsAokNGxXQ"/><meta name="twitter:card" content="summary_large_image"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:auto;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"error":"#ba1a1a","background":"#fdf9f6","secondary":"#506600","on-primary-fixed":"#301400","on-tertiary-container":"#f6e1ff","on-tertiary":"#ffffff","on-tertiary-fixed":"#2e004d","on-primary-container":"#ffe3d1","on-secondary":"#ffffff","surface-container-high":"#ebe7e4","on-secondary-fixed-variant":"#3c4d00","inverse-primary":"#f4bb92","on-secondary-container":"#546b00","on-surface-variant":"#51443c","error-container":"#ffdad6","secondary-fixed-dim":"#b1d446","on-background":"#1c1b1a","on-error-container":"#93000a","inverse-on-surface":"#f4f0ed","primary-fixed":"#ffdcc5","primary-fixed-dim":"#f4bb92","on-error":"#ffffff","secondary-container":"#caee5d","surface-container-lowest":"#ffffff","primary":"#6f4627","on-primary":"#ffffff","surface-container-low":"#f7f3f0","tertiary-container":"#8551ab","surface":"#fdf9f6","surface-tint":"#805533","on-surface":"#1c1b1a","surface-dim":"#ddd9d6","outline":"#83746b","primary-container":"#8b5e3c","surface-variant":"#e5e2df","on-primary-fixed-variant":"#653d1e","on-tertiary-fixed-variant":"#612e87","tertiary":"#6b3891","on-secondary-fixed":"#161e00","tertiary-fixed-dim":"#e2b6ff","secondary-fixed":"#ccf05f","surface-container":"#f1edea","tertiary-fixed":"#f3daff","outline-variant":"#d5c3b8","surface-bright":"#fdf9f6","inverse-surface":"#31302f","surface-container-highest":"#e5e2df"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"24px","margin-mobile":"16px","unit":"8px","margin-desktop":"48px","container-max":"1280px"},"fontFamily":{"headline-sm":["Plus Jakarta Sans"],"body-md":["Be Vietnam Pro"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Be Vietnam Pro"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Be Vietnam Pro"],"label-lg":["Be Vietnam Pro"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+  html { scroll-behavior: smooth; }
+  #home, #menu-top, #locations, #our-story-page, #rewards { scroll-margin-top: 96px; }
+  body { min-height: 100vh; }
+  button, a, input { -webkit-tap-highlight-color: transparent; }
+  .cart-badge { min-width: 20px; height:20px; padding:0 5px; }
+  button[onclick^="openModal("]{position:relative;overflow:visible;}
+  .item-qty-badge{position:absolute;top:-9px;right:-9px;display:flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#29241f;color:#fff;font-size:12px;font-weight:800;border:2.5px solid #fdf9f6;box-shadow:0 3px 8px rgba(0,0,0,.25);transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:2;}
+  .item-qty-badge.show{transform:scale(1);}
+  .item-qty-badge.pop{animation:itemBadgePop .4s ease;}
+  @keyframes itemBadgePop{0%{transform:scale(1)}45%{transform:scale(1.4)}100%{transform:scale(1)}}
+  .add-btn-label{transition:opacity .18s ease;}
+  .add-btn-success{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6px;background:#3f6b1f;color:#fff;border-radius:inherit;opacity:0;pointer-events:none;transition:opacity .2s ease;}
+  .add-btn-success.show{opacity:1;}
+  .add-btn-success .material-symbols-outlined{font-size:20px;animation:checkPop .35s ease;}
+  @keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+  .toast { transform: translateY(16px); opacity:0; pointer-events:none; transition:all .25s ease; }
+  .toast.show { transform:translateY(0); opacity:1; }
+  .cart-drawer { transform:translateX(100%); transition:transform .3s ease; }
+  .cart-drawer.open { transform:translateX(0); }
+  .cart-backdrop { opacity:0; pointer-events:none; transition:opacity .3s ease; }
+  .cart-backdrop.open { opacity:1; pointer-events:auto; }
+  .quantity-btn { width:32px;height:32px;border-radius:9999px;display:flex;align-items:center;justify-content:center; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+  }
+</style>
+
+<style>
+  #cart-drawer .quantity-btn {
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  #cart-drawer .quantity-btn:active {
+    transform: scale(.94);
+  }
+</style>
+
+<style id="responsive-scroll-fix">
+  /* Keep the browser's normal document scrolling. Only hide sideways overflow. */
+  html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+  }
+  * { box-sizing: border-box; }
+  img, video, iframe, svg { max-width: 100%; }
+  /* Never trap page scrolling in the menu/card areas. */
+  main, main > div, #menu-top {
+    overflow: visible !important;
+  }
+  /* The only intentional scroll containers are the cart and customization modal. */
+  #cart-items {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>
+
+<style id="story-page-styles">
+.story-page{font-family:"Plus Jakarta Sans","Be Vietnam Pro",sans-serif;background:#f8f5ef;color:#28231f}
+.story-hero{position:relative;min-height:430px;display:flex;align-items:center;justify-content:center;background-image:url("https://images.unsplash.com/photo-1525385133512-2f3b4f4a5f2b?auto=format&fit=crop&w=1800&q=85");background-size:cover;background-position:center}
+.story-hero-overlay{position:absolute;inset:0;background:rgba(248,245,239,.58)}
+.story-hero-content{position:relative;z-index:1;text-align:center;max-width:760px;padding:70px 24px}
+.story-eyebrow{font-size:11px;letter-spacing:.25em;font-weight:700;color:#676b45;margin-bottom:14px}
+.story-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,5vw,58px);line-height:1.08;margin:0 0 18px;color:#29241f}
+.story-hero p{font-family:Georgia,"Times New Roman",serif;font-size:14px;line-height:1.65;max-width:650px;margin:auto;color:#4c4640}
+.story-section{max-width:1180px;margin:0 auto;padding:72px 28px;display:grid;gap:48px}
+.story-started{grid-template-columns:1fr 1.15fr;align-items:center}
+.story-card{background:#fffdfa;border-radius:8px;padding:42px 38px;box-shadow:0 14px 35px rgba(50,43,35,.12)}
+.story-line{width:28px;height:2px;background:#766f48;margin-bottom:25px}
+.story-card h2,.barista-copy h2{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.18;margin:0 0 20px}
+.story-card p,.barista-copy p{font-family:Georgia,"Times New Roman",serif;color:#716960;font-size:13px;line-height:1.75;margin:0 0 17px}
+.fresh-daily{display:flex;align-items:center;gap:13px;margin-top:25px}
+.fresh-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#c7ef57;color:#587126;font-size:18px}
+.fresh-daily strong{display:block;font-family:Georgia,serif;font-size:14px}
+.fresh-daily span{display:block;font-family:Georgia,serif;color:#8a8279;font-size:11px;margin-top:2px}
+.story-collage{position:relative;min-height:400px}
+.story-img{position:absolute;object-fit:cover;border-radius:9px;box-shadow:0 8px 20px rgba(40,30,20,.14)}
+.story-img-top{width:76%;height:205px;right:0;top:0}
+.story-img-bottom-left{width:53%;height:145px;left:0;bottom:22px}
+.story-img-bottom-right{width:48%;height:145px;right:0;bottom:0}
+.story-barista{background:#f2efe9;max-width:none;padding-left:max(28px,calc((100vw - 1180px)/2));padding-right:max(28px,calc((100vw - 1180px)/2));grid-template-columns:1fr 1.1fr;align-items:center}
+.barista-photo-wrap{position:relative;max-width:430px;margin:auto}
+.barista-photo-wrap>img{width:100%;height:520px;object-fit:cover;border-radius:18px;box-shadow:0 10px 25px rgba(30,25,20,.15)}
+.phone-overlay{position:absolute;left:10%;bottom:-22px;width:125px;height:230px;background:#181818;border-radius:20px;padding:7px;box-shadow:0 10px 25px rgba(0,0,0,.28);transform:rotate(-3deg)}
+.phone-screen{height:100%;border-radius:15px;background:#f8f5ef;padding:12px 8px;overflow:hidden}
+.phone-dot{width:30px;height:4px;border-radius:4px;background:#292929;margin:0 auto 10px}
+.phone-title{font-weight:700;font-size:9px;text-align:center}
+.phone-card{height:70px;margin-top:10px;border-radius:7px;background:linear-gradient(135deg,#d8d0bf,#8f896e)}
+.phone-card.small{height:45px;background:linear-gradient(135deg,#e7e0d3,#aaa38f)}
+.barista-copy{max-width:590px}
+.barista-copy .quote{font-style:italic;color:#5e574f}
+.story-stats{display:flex;gap:42px;margin-top:28px}
+.story-stats>div{padding-right:38px;border-right:1px solid #cfc8bd}
+.story-stats>div:last-child{border-right:0}
+.story-stats strong{display:block;font-family:Georgia,serif;font-size:28px;color:#6e6946}
+.story-stats span{display:block;font-size:9px;letter-spacing:.12em;color:#8b8379;margin-top:4px}
+@media(max-width:800px){
+  .story-hero{min-height:390px}
+  .story-started,.story-barista{grid-template-columns:1fr}
+  .story-section{padding:50px 20px;gap:30px}
+  .story-card{padding:30px 24px}
+  .story-collage{min-height:350px}
+  .barista-photo-wrap{width:86%;margin-left:7%}
+  .barista-photo-wrap>img{height:450px}
+  .barista-copy{padding:15px 5px 0}
+}
+@media(max-width:480px){
+  .story-hero h1{font-size:34px}
+  .story-hero p{font-size:12px}
+  .story-collage{min-height:285px}
+  .story-img-top{height:145px}
+  .story-img-bottom-left,.story-img-bottom-right{height:105px}
+  .barista-photo-wrap>img{height:380px}
+  .story-stats{gap:20px}
+  .story-stats>div{padding-right:20px}
+}
+</style>
+
+
+<style id="final-scroll-fix">
+html{overflow-x:hidden!important;overflow-y:auto!important}
+body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100vh}
+</style>
+
+
+<style id="hamburger-menu-styles">
+/* Mobile hamburger: fixed to the top-right of the site header */
+#mobile-menu-btn{
+  display:none !important;
+  position:absolute !important;
+  top:50% !important;
+  right:88px !important;
+  transform:translateY(-50%) !important;
+  width:48px !important;
+  height:48px !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  color:#29241f !important;
+  cursor:pointer !important;
+  box-shadow:0 3px 12px rgba(0,0,0,.12) !important;
+  z-index:1005 !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+#mobile-menu-btn span,
+#mobile-menu-btn span:before,
+#mobile-menu-btn span:after{
+  display:block !important;
+  width:25px !important;
+  height:3px !important;
+  background:currentColor !important;
+  border-radius:3px !important;
+  position:relative !important;
+  transition:.25s ease !important;
+}
+#mobile-menu-btn span:before,
+#mobile-menu-btn span:after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+}
+#mobile-menu-btn span:before{top:-8px !important}
+#mobile-menu-btn span:after{top:8px !important}
+#mobile-menu-btn.active span{background:transparent !important}
+#mobile-menu-btn.active span:before{top:0 !important;transform:rotate(45deg) !important}
+#mobile-menu-btn.active span:after{top:0 !important;transform:rotate(-45deg) !important}
+
+#mobile-menu-overlay{
+  position:fixed !important;
+  inset:0 !important;
+  background:rgba(0,0,0,.35) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  transition:.25s ease !important;
+  z-index:1008 !important;
+}
+#mobile-menu-overlay.open{
+  opacity:1 !important;
+  visibility:visible !important;
+}
+#mobile-menu-panel{
+  position:fixed !important;
+  top:0 !important;
+  right:0 !important;
+  width:min(320px,82vw) !important;
+  height:100dvh !important;
+  background:#fffdfa !important;
+  box-shadow:-12px 0 35px rgba(0,0,0,.2) !important;
+  transform:translateX(105%) !important;
+  transition:transform .28s ease !important;
+  z-index:1009 !important;
+  padding:90px 24px 30px !important;
+  overflow-y:auto !important;
+  box-sizing:border-box !important;
+}
+#mobile-menu-panel.open{transform:translateX(0) !important}
+.mobile-menu-brand{
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:25px !important;
+  font-weight:700 !important;
+  margin-bottom:24px !important;
+  color:#29241f !important;
+}
+.mobile-menu-link{
+  display:block !important;
+  padding:17px 5px !important;
+  border-bottom:1px solid #e9e4dc !important;
+  color:#37312b !important;
+  text-decoration:none !important;
+  font-family:"Plus Jakarta Sans","Be Vietnam Pro",sans-serif !important;
+  font-size:16px !important;
+  font-weight:600 !important;
+}
+.mobile-menu-order{
+  margin-top:26px !important;
+  display:block !important;
+  text-align:center !important;
+  padding:14px 18px !important;
+  border-radius:999px !important;
+  background:#29241f !important;
+  color:white !important;
+  text-decoration:none !important;
+  font-size:14px !important;
+  font-weight:700 !important;
+}
+@media (max-width:800px){
+  #mobile-menu-btn{display:flex !important}
+}
+@media (min-width:801px){
+  #mobile-menu-btn,#mobile-menu-overlay,#mobile-menu-panel{display:none !important}
+}
+</style>
+
+
+<style id="hamburger-final-layout">
+@media(max-width:800px){
+  body{overflow-x:hidden !important;overflow-y:auto !important}
+  header{position:fixed !important;top:0 !important;left:0 !important;width:100% !important}
+}
+</style>
+
+<style id="hamburger-cart-spacing">
+@media(max-width:800px){
+  #mobile-menu-btn{
+    right:88px !important;
+    width:48px !important;
+    height:48px !important;
+  }
+}
+@media(max-width:380px){
+  #mobile-menu-btn{
+    right:78px !important;
+    width:44px !important;
+    height:44px !important;
+  }
+}
+</style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><img alt="Boba Bliss Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkBN1X6fFdO0WTIe3h5D7l2UQKqaEAGerdT_qDUt-zHRUcSPbk2Tac2mJfECTll2v9kw4mz_JYl1f9Ij0QT-o1j3ChtgQB65hnx7jDR36ETDQmcGH4aExmrrTJersid8jpdqEDltIWEiJPOLvhhUf7yjhKnN9cOQaJ-L7IHUA1cr1Q1btRqa8iwLEDu-RnfaEDTnIOI2TzN34Wp-6rluMp7kD2IyF0HfqWS4xpruo3AH-OsAokNGxXQ"/><span class="font-headline-md text-headline-md text-primary tracking-tight">Boba Bliss</span></div><nav class="hidden md:flex items-center gap-gutter" data-active-classes="text-secondary font-bold underline decoration-2 underline-offset-8"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#home">Home</a><a aria-current="page" class="transition-colors text-secondary font-bold underline decoration-2 underline-offset-8" data-path="menu" href="#menu-top">Menu</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="locations" href="#locations">Locations</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="our-story" href="#our-story-page">Our Story</a></nav><div class="flex items-center gap-4">
+<div class="hidden sm:flex flex-col items-end mr-2"><span class="font-label-sm text-label-sm text-on-surface-variant">Welcome back,</span><span class="font-label-lg text-label-lg text-primary">Barista Joy</span></div>
+<button type="button" onclick="openCart()" aria-label="Open order" class="relative w-10 h-10 rounded-full border-2 border-secondary-container bg-surface flex items-center justify-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<span id="cart-count" class="cart-badge absolute -top-1 -right-1 rounded-full bg-secondary text-on-secondary text-xs font-bold flex items-center justify-center">0</span>
+</button>
+</div></div>
+<button id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+  <span></span>
+</button>
+</header>
+<div id="mobile-menu-overlay"></div>
+<aside id="mobile-menu-panel" aria-hidden="true">
+  <div class="mobile-menu-brand">Hashtag Boba</div>
+  <a class="mobile-menu-link" href="#home">Home</a>
+  <a class="mobile-menu-link" href="#menu-top">Menu</a>
+  <a class="mobile-menu-link" href="#locations">Locations</a>
+  <a class="mobile-menu-link" href="#rewards">Rewards</a>
+  <a class="mobile-menu-link" href="#our-story-page">Our Story</a>
+  <a class="mobile-menu-order" href="#menu-top">View Menu &amp; Order</a>
+</aside>
+<main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<div id="home" class="relative w-full overflow-hidden bg-surface-container-low px-margin-mobile lg:px-margin-desktop py-12 lg:py-24">
+<div class="absolute inset-0 opacity-30 mix-blend-multiply pointer-events-none" style="background-image: radial-gradient(circle at 80% 20%, var(--colors-primary-container) 0%, transparent 40%), radial-gradient(circle at 20% 80%, var(--colors-secondary-container) 0%, transparent 40%);"></div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col items-center text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">Our Menu</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover handcrafted happiness. From our signature milk teas to refreshing fruit infusions, every drink is made with premium ingredients and customizable just for you.</p>
+</div>
+</div>
+<div id="menu-top" class="w-full bg-surface py-16 px-margin-mobile lg:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="mb-24 relative">
+<div class="flex items-center gap-4 mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Classic Milk Teas</h2>
+<div class="h-px bg-outline-variant flex-grow opacity-50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter relative">
+<div class="absolute -left-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pale green matcha milk tea in a clear plastic cup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXAT44RE7umi2lauJEVum4OvijEzw6msbC-COkuugejkLX-0K3JvTDPkXdsjF0e0RlfxDfO2quFtNUr_kxjm_71vHw-cGbZousAVDkWLrfic9PHpvcUas3gQJ2zHUAtwL5vlPvUirYwHIjijsORuvLEUNKSdLfwfJp9GaGklmXddvOgf5-e9ON-zhRYELUOLAfACAjpJhrRXZJK6g6jb7wkNixPQjD2lCpERs3ZYEoz5q6BA0Uqm-55w"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm backdrop-blur-md">Best Seller</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Matcha Thai boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹199</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Ceremonial grade Uji matcha layered over fresh milk. Earthy, subtly sweet, and incredibly smooth.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Matcha Thai boba', 199.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Taro boba tea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRZcI-7LMq-eXOB5n4VwUwerK8BHONdcJJhOfoU_gsfPLF3QX8q6u5LoV7hy0JOTgfauFJbdjEvT3eU5CXHeEwQ85XuVYqP6sa5A-Wzs4zeK429hQzINsl143mbiflmMk7rXKiYMGPeE-wMMfQ_jds59BGItNWqUrD3o6LICm1fTGGZdyOwz6IYuGxO2UJ2RYkYeQq74YBTZJXtyhg_7Wk9X1YRALUvsTV5Ij8yJ86_5iatML0Tf1mIw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Nutty Taro boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹199</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Creamy and nutty taro blended perfectly with our signature milk and chewy tapioca pearls.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Nutty Taro boba', 199.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Chocolate boba" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUox17SvNzuX8Dr0iffNycyuiZFcOjUJ3DL4nXRh0h98XpOEBZ8ay4duMk0DvasbbPVB1rBaLzNey3cNCOG0zS6tViJaB-8Yfb1CARbFiNCA074Y2vuWmG38myKcoKE5BqJCDFp3-86olfK5TNRqC8Vh6LvwNZkkGu1-qCldzPiWhHR10-9FzAmkPCxyMtIDgDQOD_MpecyKU6q-IBSWJgVuMhaKcsw7dVSpao_UQCFhSh-d2ZE8kM5A"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Chocolate boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹160</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Rich and indulgent chocolate milk tea, a perfect treat for chocolate lovers.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Chocolate boba', 160.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Choco hazelnut boba" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRZcI-7LMq-eXOB5n4VwUwerK8BHONdcJJhOfoU_gsfPLF3QX8q6u5LoV7hy0JOTgfauFJbdjEvT3eU5CXHeEwQ85XuVYqP6sa5A-Wzs4zeK429hQzINsl143mbiflmMk7rXKiYMGPeE-wMMfQ_jds59BGItNWqUrD3o6LICm1fTGGZdyOwz6IYuGxO2UJ2RYkYeQq74YBTZJXtyhg_7Wk9X1YRALUvsTV5Ij8yJ86_5iatML0Tf1mIw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Choco hazelnut boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹170</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A decadent blend of chocolate and toasted hazelnut flavors.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Choco hazelnut boba', 170.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Choco berry blast boba" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUox17SvNzuX8Dr0iffNycyuiZFcOjUJ3DL4nXRh0h98XpOEBZ8ay4duMk0DvasbbPVB1rBaLzNey3cNCOG0zS6tViJaB-8Yfb1CARbFiNCA074Y2vuWmG38myKcoKE5BqJCDFp3-86olfK5TNRqC8Vh6LvwNZkkGu1-qCldzPiWhHR10-9FzAmkPCxyMtIDgDQOD_MpecyKU6q-IBSWJgVuMhaKcsw7dVSpao_UQCFhSh-d2ZE8kM5A"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Choco berry blast boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹170</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Rich chocolate combined with a burst of mixed berries.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Choco berry blast boba', 170.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-24 relative">
+<div class="flex items-center gap-4 mb-12 flex-row-reverse">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Refreshing Fruit Teas</h2>
+<div class="h-px bg-outline-variant flex-grow opacity-50"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter relative">
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A light, ruby-red strawberry green tea in a clear cup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTJspFV-Lg9G4lqwGSmHEvXWoIUrkUJ_LbQ4tt4kdt0vm7X7MWwT4HrHzr8tnucXVs_3rywlstKD87W94XlD-J08DRRGPvRExJvs0pDEfP_pVrskQPD6AH1QnFxNCilTuFjY4Hx-Qyd26J61zOCgKH680DIWeS-vk9vIiTfp0j4k1j8IOpv4eOHBW58Cb0_-OB6WZ_T21gABlFstKYLL9KojxBR3oxfzqHarBC9g3aQ0_x_-wXcnh5yg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Strawberry boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Hand-muddled strawberries blended with our premium jasmine green tea. Light, sweet, and bursting with fresh fruit flavor.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Strawberry boba', 150.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A golden-yellow mango tea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD0lhE3_pjn605Zd3YD8gbJBeGslL3nINt9L4F6be8FRjkLsQQ2TNSD1y6hxah_uK_D7XeXmsrlbPjYoI2JTff4NFlCM6YEt3JUZ96NTDPvg09BlJDstlMGhaOoLbDsaw842yKtyss1gJFVSLXJqQqqMFgxfa80ZVFmWS-Nr-yxar8wmvhkceWWegKq-jNQp0bEk87QV7uA_856fViXVfeWGeEPWJjOP2s4R4Pbq5GC_YOiufu6THQpw"/>
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm backdrop-blur-md">Staff Pick</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mango boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Sweet mango puree and oolong tea, crowned with our signature savory-sweet cheese foam. A perfect balance of flavors.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Mango boba', 150.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Peach Ice Tea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_IXInI1eDyayKbe_1tCR0KAQVCRZWed7XQI4xTHKP640a-6OSw-9utfY-ZxkCECcSgiSIgbwUbOs1meNkLCv9g0qnEek1bgmtdP5O24YiM8dC7B_6YR8myurDLmbfn1P2SacjDU-t30KgGYYlrmNHSFcTMTeRthV1NidEz4whe7MfpBzf2BXRnQy_bGMWtdLsaKvYESE8MtvMDhVNhc60UCSussUS2ngqf83A0Md9MkNGMp8UGwxIzw"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm backdrop-blur-md">New</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Peach Ice Tea</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Refreshing Peach Ice Tea with ice cubes and a mint sprig, perfect for a warm day.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Peach Ice Tea', 150.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Blue Ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAobXPJR1vtzRZ1bphmBE3eashI4ZW15UxeHjkwUdgPASGbHETJK4J0BM-x_MyE8Lks8TBRkdCCHhaUfLBd7nCCiyVshYIndplyk2bU8Nk__XO2z6g5hrSFFMOx9_eWN-5tsvxLYQ1peiWFrZ2YGGwtZVIrRmM093A96628ifLvWR0j3PuVtkdvJZ94UdZNfClno0jN7RbjYaC0ufXkCzPO1RtI43ZOJqxF01gVooSnOM6-mR5bbQMsCw"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm backdrop-blur-md">New</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Blue Ocean</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹160</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Vibrant Blue Ocean boba drink with layers, ice, and clear boba pearls.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Blue Ocean', 160.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Kiwi boba" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQFVc2S99oF4Id06yrJgwXWuqp-pqsBm669oygcogewjCzCZ_VC0iAYfKsefCkYLRUS_ljSidLPYBbpuxZjB4dLkpmXBgmhXDsLOIjEuH8wObti0Y7D3TUiMCrKyNiKZwI0MYOsyTxmHBkXS9LPhiyR8oNTXxJuGvO_OAtPTGNfICxNYKpARUbLtFwdnm3CgGsX9kYmHrv01Rro1wv64UVOPJ8vHcjBue_cW1sk9izoioDaqaYufiTug"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Kiwi boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹170</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Tangy and sweet kiwi infused green tea.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Kiwi boba', 170.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Litchi Boba" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTJspFV-Lg9G4lqwGSmHEvXWoIUrkUJ_LbQ4tt4kdt0vm7X7MWwT4HrHzr8tnucXVs_3rywlstKD87W94XlD-J08DRRGPvRExJvs0pDEfP_pVrskQPD6AH1QnFxNCilTuFjY4Hx-Qyd26J61zOCgKH680DIWeS-vk9vIiTfp0j4k1j8IOpv4eOHBW58Cb0_-OB6WZ_T21gABlFstKYLL9KojxBR3oxfzqHarBC9g3aQ0_x_-wXcnh5yg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Litchi Boba</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹150</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Sweet and floral litchi flavor in a refreshing iced tea.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('Litchi Boba', 150.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="group bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 relative transform hover:-translate-y-1">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="All fruit mojito soda base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQFVc2S99oF4Id06yrJgwXWuqp-pqsBm669oygcogewjCzCZ_VC0iAYfKsefCkYLRUS_ljSidLPYBbpuxZjB4dLkpmXBgmhXDsLOIjEuH8wObti0Y7D3TUiMCrKyNiKZwI0MYOsyTxmHBkXS9LPhiyR8oNTXxJuGvO_OAtPTGNfICxNYKpARUbLtFwdnm3CgGsX9kYmHrv01Rro1wv64UVOPJ8vHcjBue_cW1sk9izoioDaqaYufiTug"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">All fruit mojito soda base</h3>
+<span class="font-headline-sm text-headline-sm text-primary">₹109</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A sparkling mix of all your favorite fruits in a refreshing soda base.</p>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" onclick="openModal('All fruit mojito soda base', 109.00)">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300" id="customize-modal">
+<div class="absolute inset-0 bg-surface/90 backdrop-blur-sm" onclick="closeModal()"></div>
+<div class="relative w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden transform scale-95 transition-transform duration-300" id="modal-content">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="modal-item-name"></h3>
+<p class="font-label-lg text-label-lg text-primary mt-1" id="modal-item-price"></p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 rounded-full hover:bg-surface-variant" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 overflow-y-auto max-h-[614px]">
+<div class="mb-8">
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-4">Sweetness Level</h4>
+<div class="flex justify-between gap-2">
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">0%</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">25%</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-primary rounded-lg font-body-md text-body-md text-primary bg-primary/5 transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">50%</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">75%</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">100%</button>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-4">Ice Level</h4>
+<div class="flex justify-between gap-2">
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">No Ice</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">Less Ice</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-primary rounded-lg font-body-md text-body-md text-primary bg-primary/5 transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">Regular</button>
+<button class="flex-1 py-2 px-2 bg-surface border-2 border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:border-primary transition-colors focus:border-primary focus:bg-primary/5 focus:text-primary active-state">Extra Ice</button>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-4">Toppings (+ ₹50 each)</h4>
+<div class="space-y-3">
+<label class="flex items-center p-3 border-2 border-surface-variant rounded-lg hover:border-primary cursor-pointer transition-colors group">
+<div class="relative flex items-center justify-center w-6 h-6 mr-4">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-full checked:bg-secondary checked:border-secondary transition-all duration-200" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-secondary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none scale-50 peer-checked:scale-100 transition-all duration-200">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tapioca Pearls (Boba)</span>
+</label>
+<label class="flex items-center p-3 border-2 border-surface-variant rounded-lg hover:border-primary cursor-pointer transition-colors group">
+<div class="relative flex items-center justify-center w-6 h-6 mr-4">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-full checked:bg-secondary checked:border-secondary transition-all duration-200" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-secondary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none scale-50 peer-checked:scale-100 transition-all duration-200">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Lychee Jelly</span>
+</label>
+<label class="flex items-center p-3 border-2 border-surface-variant rounded-lg hover:border-primary cursor-pointer transition-colors group">
+<div class="relative flex items-center justify-center w-6 h-6 mr-4">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-full checked:bg-secondary checked:border-secondary transition-all duration-200" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-on-secondary text-sm opacity-0 peer-checked:opacity-100 pointer-events-none scale-50 peer-checked:scale-100 transition-all duration-200">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Cheese Foam</span>
+</label>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-surface-variant bg-surface-container-low">
+<button class="w-full bg-primary text-on-primary font-headline-sm text-headline-sm py-4 rounded-lg shadow-md hover:bg-primary-container transition-all hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm" onclick="closeModal()">
+          Add to Order - <span id="modal-total-price"></span>
+</button>
+</div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('customize-modal');
+  const modalContent = document.getElementById('modal-content');
+  const cartCount = document.getElementById('cart-count');
+  let basePrice = 0;
+  let currentItem = "";
+  let cart = JSON.parse(localStorage.getItem("bobaBlissCart") || "[]");
+
+  const money = n => `₹${Number(n).toFixed(2)}`;
+
+  function saveCart() {
+    localStorage.setItem("bobaBlissCart", JSON.stringify(cart));
+    updateCartCount();
+    updateItemBadges();
+    renderCart();
+  }
+
+  function setupItemBadges() {
+    document.querySelectorAll('button[onclick^="openModal("]').forEach(btn => {
+      const match = btn.getAttribute('onclick').match(/openModal\('([^']+)'/);
+      if (!match) return;
+      btn.dataset.itemName = match[1];
+
+      const badge = document.createElement('span');
+      badge.className = 'item-qty-badge';
+      badge.dataset.itemBadge = match[1];
+      badge.textContent = '0';
+      btn.appendChild(badge);
+
+      const success = document.createElement('span');
+      success.className = 'add-btn-success';
+      success.dataset.itemSuccess = match[1];
+      success.innerHTML = '<span class="material-symbols-outlined">check_circle</span><span>Added</span>';
+      btn.appendChild(success);
+    });
+  }
+
+  function flashAdded(name) {
+    const btn = document.querySelector(`button[data-item-name="${CSS.escape(name)}"]`);
+    if (!btn) return;
+    const success = btn.querySelector('[data-item-success]');
+    const label = btn.querySelector('.add-btn-label') || btn.querySelector('span');
+    if (label) label.style.opacity = '0';
+    if (success) success.classList.add('show');
+    setTimeout(() => {
+      if (success) success.classList.remove('show');
+      if (label) label.style.opacity = '1';
+    }, 900);
+  }
+
+  function updateItemBadges() {
+    const qtyByName = {};
+    cart.forEach(item => { qtyByName[item.name] = (qtyByName[item.name] || 0) + item.qty; });
+    document.querySelectorAll('[data-item-badge]').forEach(badge => {
+      const qty = qtyByName[badge.dataset.itemBadge] || 0;
+      const wasShown = badge.classList.contains('show');
+      badge.textContent = qty;
+      badge.classList.toggle('show', qty > 0);
+      if (qty > 0 && wasShown) {
+        badge.classList.remove('pop');
+        void badge.offsetWidth;
+        badge.classList.add('pop');
+      }
+    });
+  }
+
+  setupItemBadges();
+  updateItemBadges();
+
+  function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    if (cartCount) cartCount.textContent = count;
+  }
+
+  window.openModal = function(name, price) {
+    currentItem = name;
+    basePrice = Number(price);
+    document.getElementById('modal-item-name').textContent = name;
+    document.getElementById('modal-item-price').textContent = `${money(basePrice)} base`;
+    document.getElementById('modal-total-price').textContent = money(basePrice);
+
+    document.querySelectorAll('#customize-modal input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('#customize-modal .active-state').forEach((btn, i) => {
+      const selected = (i === 2 || i === 7);
+      btn.classList.toggle('border-primary', selected);
+      btn.classList.toggle('bg-primary/5', selected);
+      btn.classList.toggle('text-primary', selected);
+      btn.classList.toggle('border-outline-variant', !selected);
+      btn.classList.toggle('text-on-surface-variant', !selected);
+    });
+
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.remove('opacity-0');
+    modalContent.classList.remove('scale-95');
+    modalContent.classList.add('scale-100');
+  };
+
+  window.closeModal = function() {
+    modal.classList.add('opacity-0');
+    modalContent.classList.remove('scale-100');
+    modalContent.classList.add('scale-95');
+    setTimeout(() => modal.classList.add('hidden'), 300);
+  };
+
+  function customizationTotal() {
+    return basePrice + [...document.querySelectorAll('#customize-modal input[type="checkbox"]:checked')]
+      .reduce(sum => sum + 50, 0);
+  }
+
+  function updateModalTotal() {
+    document.getElementById('modal-total-price').textContent = money(customizationTotal());
+  }
+
+  document.querySelectorAll('#customize-modal input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', updateModalTotal);
+  });
+
+  document.querySelectorAll('#customize-modal .active-state').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const group = e.currentTarget.parentElement;
+      group.querySelectorAll('.active-state').forEach(b => {
+        b.classList.remove('border-primary','bg-primary/5','text-primary');
+        b.classList.add('border-outline-variant','text-on-surface-variant');
+      });
+      e.currentTarget.classList.add('border-primary','bg-primary/5','text-primary');
+      e.currentTarget.classList.remove('border-outline-variant','text-on-surface-variant');
+    });
+  });
+
+  const footer = document.querySelector('footer');
+  const drawer = document.createElement('div');
+  drawer.innerHTML = `
+    <div id="cart-backdrop" class="cart-backdrop fixed inset-0 z-[120] bg-black/30 backdrop-blur-sm" onclick="closeCart()"></div>
+    <aside id="cart-drawer" class="cart-drawer fixed right-0 top-0 z-[130] h-full w-full max-w-md bg-surface shadow-2xl flex flex-col" aria-label="Your order">
+      <div class="p-6 border-b border-surface-variant flex items-center justify-between">
+        <div><h2 class="font-headline-md text-headline-md text-on-surface">Your Order</h2><p class="text-sm text-on-surface-variant">Freshly prepared for you.</p></div>
+        <button onclick="closeCart()" aria-label="Close order" class="p-2 rounded-full hover:bg-surface-variant"><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <div id="cart-items" class="flex-1 overflow-y-auto p-6"></div>
+      <div class="border-t border-surface-variant bg-surface-container-low p-6">
+        <div class="flex justify-between mb-4"><span class="font-label-lg">Total</span><strong id="cart-total" class="font-headline-md text-primary">₹0.00</strong></div>
+        <button onclick="placeOrder()" class="w-full bg-primary text-on-primary font-headline-sm py-4 rounded-lg shadow-md hover:bg-primary-container">Place Order</button>
+      </div>
+    </aside>`;
+  document.body.appendChild(drawer);
+
+  const toast = document.createElement('div');
+  toast.id = "toast";
+  toast.className = "toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] bg-on-surface text-surface px-5 py-3 rounded-full shadow-lg text-sm";
+  document.body.appendChild(toast);
+
+  window.addCurrentToCart = function() {
+    const sweetness = [...document.querySelectorAll('#customize-modal .active-state')].slice(0,5).find(b => b.classList.contains('border-primary'))?.textContent.trim() || "50%";
+    const ice = [...document.querySelectorAll('#customize-modal .active-state')].slice(5).find(b => b.classList.contains('border-primary'))?.textContent.trim() || "Regular";
+    const toppings = [...document.querySelectorAll('#customize-modal input[type="checkbox"]:checked')].map(cb => cb.parentElement.parentElement.querySelector('span:last-child')?.textContent.trim()).filter(Boolean);
+    const price = customizationTotal();
+    const key = JSON.stringify([currentItem, sweetness, ice, toppings]);
+    const existing = cart.find(x => x.key === key);
+    if (existing) existing.qty += 1;
+    else cart.push({key, name: currentItem, price, sweetness, ice, toppings, qty:1});
+    saveCart();
+    closeModal();
+    showToast(`${currentItem} added to your order`);
+    flashAdded(currentItem);
+  };
+
+  // Convert the original modal CTA into a real add-to-cart action.
+  const cta = document.getElementById('modal-total-price').closest('button');
+  cta.onclick = addCurrentToCart;
+
+  window.openCart = function() {
+    document.getElementById('cart-backdrop').classList.add('open');
+    document.getElementById('cart-drawer').classList.add('open');
+    renderCart();
+  };
+  window.closeCart = function() {
+    document.getElementById('cart-backdrop').classList.remove('open');
+    document.getElementById('cart-drawer').classList.remove('open');
+  };
+
+  window.changeQtyAt = function(index, delta) {
+    if (!Number.isInteger(index) || !cart[index]) return;
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) cart.splice(index, 1);
+    saveCart();
+  };
+
+  window.removeItemAt = function(index) {
+    if (!Number.isInteger(index) || !cart[index]) return;
+    cart.splice(index, 1);
+    saveCart();
+  };
+
+  function renderCart() {
+    const box = document.getElementById('cart-items');
+    const totalBox = document.getElementById('cart-total');
+    if (!box) return;
+    if (!cart.length) {
+      box.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center text-on-surface-variant"><span class="material-symbols-outlined text-5xl mb-3">shopping_bag</span><p class="font-headline-sm text-on-surface">Your order is empty</p><p class="text-sm mt-1">Choose a drink from the menu to get started.</p></div>`;
+      totalBox.textContent = money(0);
+      return;
+    }
+    let total = 0;
+    box.innerHTML = cart.map(item => {
+      total += item.price * item.qty;
+      const details = [item.sweetness, item.ice, ...(item.toppings || [])].join(" • ");
+      return `<div class="border-b border-surface-variant pb-5 mb-5">
+        <div class="flex justify-between gap-4"><div><h3 class="font-headline-sm text-on-surface">${item.name}</h3><p class="text-xs text-on-surface-variant mt-1">${details}</p></div><button onclick="removeItemAt(${cart.indexOf(item)})" class="text-on-surface-variant hover:text-error" aria-label="Remove"><span class="material-symbols-outlined text-base">delete</span></button></div>
+        <div class="flex items-center justify-between mt-3"><span class="text-primary font-bold">${money(item.price * item.qty)}</span><div class="flex items-center gap-2"><button class="quantity-btn bg-surface-variant" onclick="changeQtyAt(${cart.indexOf(item)},-1)">−</button><span class="w-5 text-center">${item.qty}</span><button class="quantity-btn bg-surface-variant" onclick="changeQtyAt(${cart.indexOf(item)},1)">+</button></div></div>
+      </div>`;
+    }).join('');
+    totalBox.textContent = money(total);
+  }
+
+  window.placeOrder = function() {
+    if (!cart.length) { showToast("Your order is empty"); return; }
+    const total = cart.reduce((s,x) => s + x.price*x.qty, 0);
+    const now = new Date();
+    const orderDate = now.toLocaleDateString("en-IN", {
+      day: "2-digit", month: "short", year: "numeric"
+    });
+    const orderTime = now.toLocaleTimeString("en-IN", {
+      hour: "2-digit", minute: "2-digit"
+    });
+
+    const orderLines = cart.map((x, i) => {
+      const toppings = x.toppings?.length ? x.toppings.join(", ") : "None";
+      return [
+        `${i + 1}. ${x.name}`,
+        `   Quantity: ${x.qty}`,
+        `   Price: ${money(x.price)} each`,
+        `   Sweetness: ${x.sweetness}`,
+        `   Ice: ${x.ice}`,
+        `   Toppings: ${toppings}`,
+        `   Item Total: ${money(x.price * x.qty)}`
+      ].join("\n");
+    }).join("\n\n");
+
+    const message = [
+      "🧋 *BOBA BLISS - NEW ORDER*",
+      "",
+      `📅 Date: ${orderDate}`,
+      `⏰ Time: ${orderTime}`,
+      "",
+      "🛍️ *ORDER DETAILS*",
+      "",
+      orderLines,
+      "",
+      `💰 *TOTAL: ${money(total)}*`,
+      "",
+      "Thank you! 😊",
+      "Please confirm my order and let me know when it is ready."
+    ].join("\n");
+    // WhatsApp is the most portable no-backend ordering method. Replace the placeholder
+    // number below with the shop's WhatsApp number before publishing.
+    const whatsappNumber = "918655233875";
+    if (!whatsappNumber) {
+      showToast("Add the shop WhatsApp number in the code to enable checkout");
+      return;
+    }
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); closeCart(); }
+  });
+
+  updateCartCount();
+  renderCart();
+})();
+</script>
+</div></main>
+<section id="locations" class="w-full bg-surface py-12 px-margin-mobile lg:px-margin-desktop">
+  <div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-8">
+    <div class="bg-surface-container rounded-xl p-8">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">Store Locator</h2>
+      <p class="text-on-surface-variant mb-5">Visit Boba Bliss for handcrafted drinks and fresh toppings.</p>
+      <div class="flex items-start gap-3 mb-3">
+        <span class="material-symbols-outlined text-primary">location_on</span>
+        <p class="text-on-surface-variant">Malad, Mumbai</p>
+      </div>
+      <div class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary">schedule</span>
+        <div>
+          <p class="font-label-lg text-primary">Open Daily</p>
+          <p class="text-on-surface-variant">10:00 AM – 10:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div id="story" class="bg-surface-container rounded-xl p-8">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">Our Story</h2>
+      <p class="text-on-surface-variant">Handcrafted happiness in every pearl. Fresh ingredients, authentic flavors.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rewards" class="w-full bg-surface-container-low py-12 px-margin-mobile lg:px-margin-desktop">
+  <div class="max-w-container-max mx-auto bg-surface-container rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+    <div class="flex-1">
+      <h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">Boba Bliss Rewards</h2>
+      <p class="text-on-surface-variant mb-2">Buy 9 drinks, get your 10th one <strong class="text-primary">free</strong>.</p>
+      <p class="text-on-surface-variant">Mention your order history in-store or on WhatsApp — every drink counts toward your next free one.</p>
+    </div>
+    <div class="flex-1 w-full flex flex-col items-center gap-3">
+      <div class="grid grid-cols-5 gap-3 justify-items-center">
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-outline-variant" style="font-size:32px">local_cafe</span>
+        <span class="material-symbols-outlined text-secondary" style="font-size:32px">redeem</span>
+      </div>
+      <p class="text-center text-on-surface-variant text-sm">9 drinks = 1 free</p>
+    </div>
+  </div>
+</section>
+<section id="our-story-page" class="story-page">
+  <div class="story-hero">
+    <div class="story-hero-overlay"></div>
+    <div class="story-hero-content">
+      <div class="story-eyebrow">OUR ROOTS</div>
+      <h1>Crafted with Heart.<br>Steeped in Tradition.</h1>
+      <p>We believe that a great cup of boba is more than just a drink; it’s a moment of pure bliss, handcrafted just for you.</p>
+    </div>
+  </div>
+
+  <section class="story-section story-started">
+    <div class="story-card">
+      <div class="story-line"></div>
+      <h2>How It All Started</h2>
+      <p>It began with a simple craving and a tiny kitchen in 2018. Frustrated by artificial powders and overly sweet syrups, our founders set out to recreate the authentic milk tea experience they remembered from childhood.</p>
+      <p>Months were spent sourcing premium loose-leaf teas from sustainable farms across Asia. Every batch of tapioca pearls was hand-cooked and boiled to achieve the perfect, elusive “Q” texture—that ideal balance of soft and chewy.</p>
+      <div class="fresh-daily">
+        <div class="fresh-icon">◉</div>
+        <div><strong>Fresh Daily</strong><span>Never powdered. Never artificial.</span></div>
+      </div>
+    </div>
+
+    <div class="story-collage">
+      <img class="story-img story-img-top" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=1000&q=80" alt="Tea ingredients">
+      <img class="story-img story-img-bottom-left" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80" alt="Boba preparation">
+      <img class="story-img story-img-bottom-right" src="https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&w=700&q=80" alt="Fresh boba drink">
+    </div>
+  </section>
+
+  <section class="story-section story-barista">
+    <div class="barista-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" alt="Head barista">
+      <div class="phone-overlay">
+        <div class="phone-screen">
+          <div class="phone-dot"></div>
+          <div class="phone-title">Boba Bliss</div>
+          <div class="phone-card"></div>
+          <div class="phone-card small"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="barista-copy">
+      <div class="story-eyebrow">THE HEART OF BLISS</div>
+      <h2>Meet Mithun,<br>Our Head Barista</h2>
+      <p class="quote">“For me, making boba isn’t just following a recipe. It’s about rhythm, timing, and understanding how the ingredients interact. It’s a craft.”</p>
+      <p>Mithun joined Hashtag Boba on day one. With a background in culinary arts and a lifelong obsession with tea culture, he oversees our entire brewing process. From adjusting steep times based on the season’s tea harvest to ensuring every pearl is cooked to that perfect bounce, Mithun ensures our quality never wavers.</p>
+      <div class="story-stats">
+        <div><strong>5+</strong><span>YEARS' EXPERIENCE</span></div>
+        <div><strong>10k</strong><span>DRINKS CRAFTED</span></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<footer class="w-full bg-surface-container-low py-12 mt-auto"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pb-12"><div class="flex flex-col gap-4"><div class="flex items-center gap-2"><img alt="Boba Bliss Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkBN1X6fFdO0WTIe3h5D7l2UQKqaEAGerdT_qDUt-zHRUcSPbk2Tac2mJfECTll2v9kw4mz_JYl1f9Ij0QT-o1j3ChtgQB65hnx7jDR36ETDQmcGH4aExmrrTJersid8jpdqEDltIWEiJPOLvhhUf7yjhKnN9cOQaJ-L7IHUA1cr1Q1btRqa8iwLEDu-RnfaEDTnIOI2TzN34Wp-6rluMp7kD2IyF0HfqWS4xpruo3AH-OsAokNGxXQ"/><span class="font-headline-sm text-headline-sm text-primary">Boba Bliss</span></div><p class="font-body-md text-on-surface-variant">Handcrafted happiness in every pearl. Fresh ingredients, authentic flavors.</p></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Quick Links</h4><nav class="flex flex-col gap-2"><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#menu-top">Menu</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#locations">Store Locator</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#rewards">Rewards</a></nav></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Connect</h4><div class="flex gap-4"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">share_reviews</span><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">mail</span><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">call</span></div></div></div><div class="border-t border-outline-variant pt-8 text-center font-label-sm text-label-sm text-on-surface-variant">© 2024 Boba Bliss Beverages. All rights reserved. Crafted with care and tapioca.</div></div></footer>
+<script id="hamburger-menu-script">
+(function(){
+  const btn=document.getElementById('mobile-menu-btn');
+  const panel=document.getElementById('mobile-menu-panel');
+  const overlay=document.getElementById('mobile-menu-overlay');
+  if(!btn||!panel||!overlay)return;
+  function closeMenu(){
+    btn.classList.remove('active');
+    btn.setAttribute('aria-expanded','false');
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    overlay.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+  function openMenu(){
+    btn.classList.add('active');
+    btn.setAttribute('aria-expanded','true');
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    overlay.classList.add('open');
+  }
+  btn.addEventListener('click',()=>panel.classList.contains('open')?closeMenu():openMenu());
+  overlay.addEventListener('click',closeMenu);
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+})();
+</script>
+
+</body></html>
