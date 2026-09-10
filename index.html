@@ -801,6 +801,21 @@ body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100vh}
     totalBox.textContent = money(total);
   }
 
+  window.shareSite = function() {
+    const shareData = {
+      title: "Boba Bliss",
+      text: "Check out Boba Bliss — handcrafted milk teas & bubble tea!",
+      url: window.location.href
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareData.url).then(() => showToast("Link copied to clipboard"));
+    } else {
+      showToast("Share not supported on this browser");
+    }
+  };
+
   window.placeOrder = function() {
     if (!cart.length) { showToast("Your order is empty"); return; }
     const total = cart.reduce((s,x) => s + x.price*x.qty, 0);
@@ -969,7 +984,7 @@ body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100vh}
   </section>
 </section>
 
-<footer class="w-full bg-surface-container-low py-12 mt-auto"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pb-12"><div class="flex flex-col gap-4"><div class="flex items-center gap-2"><img alt="Boba Bliss Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkBN1X6fFdO0WTIe3h5D7l2UQKqaEAGerdT_qDUt-zHRUcSPbk2Tac2mJfECTll2v9kw4mz_JYl1f9Ij0QT-o1j3ChtgQB65hnx7jDR36ETDQmcGH4aExmrrTJersid8jpdqEDltIWEiJPOLvhhUf7yjhKnN9cOQaJ-L7IHUA1cr1Q1btRqa8iwLEDu-RnfaEDTnIOI2TzN34Wp-6rluMp7kD2IyF0HfqWS4xpruo3AH-OsAokNGxXQ"/><span class="font-headline-sm text-headline-sm text-primary">Boba Bliss</span></div><p class="font-body-md text-on-surface-variant">Handcrafted happiness in every pearl. Fresh ingredients, authentic flavors.</p></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Quick Links</h4><nav class="flex flex-col gap-2"><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#menu-top">Menu</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#locations">Store Locator</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#rewards">Rewards</a></nav></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Connect</h4><div class="flex gap-4"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">share_reviews</span><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">mail</span><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">call</span></div></div></div><div class="border-t border-outline-variant pt-8 text-center font-label-sm text-label-sm text-on-surface-variant">© 2024 Boba Bliss Beverages. All rights reserved. Crafted with care and tapioca.</div></div></footer>
+<footer class="w-full bg-surface-container-low py-12 mt-auto"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pb-12"><div class="flex flex-col gap-4"><div class="flex items-center gap-2"><img alt="Boba Bliss Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkBN1X6fFdO0WTIe3h5D7l2UQKqaEAGerdT_qDUt-zHRUcSPbk2Tac2mJfECTll2v9kw4mz_JYl1f9Ij0QT-o1j3ChtgQB65hnx7jDR36ETDQmcGH4aExmrrTJersid8jpdqEDltIWEiJPOLvhhUf7yjhKnN9cOQaJ-L7IHUA1cr1Q1btRqa8iwLEDu-RnfaEDTnIOI2TzN34Wp-6rluMp7kD2IyF0HfqWS4xpruo3AH-OsAokNGxXQ"/><span class="font-headline-sm text-headline-sm text-primary">Boba Bliss</span></div><p class="font-body-md text-on-surface-variant">Handcrafted happiness in every pearl. Fresh ingredients, authentic flavors.</p></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Quick Links</h4><nav class="flex flex-col gap-2"><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#menu-top">Menu</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#locations">Store Locator</a><a class="font-body-md text-on-surface-variant hover:text-secondary" href="#rewards">Rewards</a></nav></div><div class="flex flex-col gap-4"><h4 class="font-label-lg text-label-lg text-primary uppercase">Connect</h4><div class="flex gap-4"><button type="button" onclick="shareSite()" aria-label="Share" class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary bg-transparent border-0 p-0">share_reviews</button><a href="mailto:stepnstyle09@gmail.com" aria-label="Email" class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">mail</a><a href="tel:+918655233875" aria-label="Call" class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">call</a></div></div></div><div class="border-t border-outline-variant pt-8 text-center font-label-sm text-label-sm text-on-surface-variant">© 2024 Boba Bliss Beverages. All rights reserved. Crafted with care and tapioca.</div></div></footer>
 <script id="hamburger-menu-script">
 (function(){
   const btn=document.getElementById('mobile-menu-btn');
