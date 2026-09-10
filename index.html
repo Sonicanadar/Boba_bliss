@@ -8,6 +8,12 @@
   button, a, input { -webkit-tap-highlight-color: transparent; }
   .cart-badge { min-width: 20px; height:20px; padding:0 5px; }
   button[onclick^="openModal("]{position:relative;overflow:visible;}
+  #detail-related{scrollbar-width:thin;}
+  #detail-related::-webkit-scrollbar{height:6px;}
+  #detail-related::-webkit-scrollbar-thumb{background:var(--md-sys-color-outline-variant,#d8cfc2);border-radius:99px;}
+  .product-view-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s ease,background .25s ease;pointer-events:none;}
+  .group:hover .product-view-overlay{opacity:1;background:rgba(0,0,0,.18);}
+  .product-view-chip{background:rgba(255,255,255,.95);padding:8px 16px;border-radius:999px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,0,0,.2);}
   .item-qty-badge{position:absolute;top:-9px;right:-9px;display:flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:#29241f;color:#fff;font-size:12px;font-weight:800;border:2.5px solid #fdf9f6;box-shadow:0 3px 8px rgba(0,0,0,.25);transform:scale(0);transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:2;}
   .item-qty-badge.show{transform:scale(1);}
   .item-qty-badge.pop{animation:itemBadgePop .4s ease;}
@@ -585,6 +591,36 @@ body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100vh}
 </div>
 </div>
 </div>
+
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300" id="product-detail-modal">
+<div class="absolute inset-0 bg-surface/90 backdrop-blur-sm" onclick="closeProductDetail()"></div>
+<div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden transform scale-95 transition-transform duration-300" id="detail-modal-content">
+<button class="absolute top-4 right-4 z-10 text-on-surface hover:text-on-surface transition-colors p-2 rounded-full bg-surface/90 hover:bg-surface shadow-sm" onclick="closeProductDetail()" aria-label="Close">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="overflow-y-auto max-h-[85vh]" id="detail-scroll-area">
+<div class="relative h-64 sm:h-80 w-full">
+<img class="w-full h-full object-cover" id="detail-img" src="" alt=""/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm backdrop-blur-md hidden" id="detail-badge"></div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-3 gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="detail-name"></h3>
+<span class="font-headline-md text-headline-md text-primary whitespace-nowrap" id="detail-price"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6" id="detail-description"></p>
+<button class="w-full bg-primary text-on-primary font-headline-sm text-headline-sm py-4 rounded-lg shadow-md hover:bg-primary-container transition-all hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm mb-8 flex items-center justify-center gap-2" id="detail-customize-btn">
+<span>Customize &amp; Add</span>
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+<div id="detail-related-wrap">
+<h4 class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-4">You Might Also Like</h4>
+<div class="flex gap-4 overflow-x-auto pb-2 -mx-1 px-1" id="detail-related"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <script>
 (() => {
   const modal = document.getElementById('customize-modal');
@@ -654,6 +690,120 @@ body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100vh}
 
   setupItemBadges();
   updateItemBadges();
+
+  const PRODUCTS = {};
+
+  function buildProductCatalog() {
+    const headings = Array.from(document.querySelectorAll('#menu-top h2.font-headline-lg'));
+    const buttons = Array.from(document.querySelectorAll('button[onclick^="openModal("]'));
+
+    buttons.forEach(btn => {
+      const match = btn.getAttribute('onclick').match(/openModal\('([^']+)',\s*([\d.]+)/);
+      if (!match) return;
+      const name = match[1];
+      const price = parseFloat(match[2]);
+      const card = btn.closest('.group');
+      if (!card) return;
+
+      const img = card.querySelector('img');
+      const desc = card.querySelector('.p-6 p.font-body-md');
+      const badgeEl = card.querySelector('.absolute.top-4.right-4');
+
+      let category = '';
+      headings.forEach(h => {
+        if (h.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          category = h.textContent.trim();
+        }
+      });
+
+      PRODUCTS[name] = {
+        name,
+        price,
+        img: img ? img.src : '',
+        desc: desc ? desc.textContent.trim() : '',
+        badge: badgeEl ? badgeEl.textContent.trim() : '',
+        category
+      };
+
+      const imgWrap = card.firstElementChild;
+      const titleEl = card.querySelector('h3');
+      if (imgWrap) {
+        imgWrap.style.cursor = 'pointer';
+        const overlay = document.createElement('div');
+        overlay.className = 'product-view-overlay';
+        overlay.innerHTML = '<span class="product-view-chip"><span class="material-symbols-outlined" style="font-size:18px">visibility</span>View Details</span>';
+        imgWrap.appendChild(overlay);
+        imgWrap.addEventListener('click', () => openProductDetail(name));
+      }
+      if (titleEl) {
+        titleEl.style.cursor = 'pointer';
+        titleEl.addEventListener('click', () => openProductDetail(name));
+      }
+    });
+  }
+
+  window.openProductDetail = function(name) {
+    const p = PRODUCTS[name];
+    if (!p) return;
+
+    document.getElementById('detail-img').src = p.img;
+    document.getElementById('detail-img').alt = p.name;
+    document.getElementById('detail-name').textContent = p.name;
+    document.getElementById('detail-price').textContent = '₹' + p.price.toFixed(0);
+    document.getElementById('detail-description').textContent = p.desc || '';
+
+    const badgeEl = document.getElementById('detail-badge');
+    if (p.badge) {
+      badgeEl.textContent = p.badge;
+      badgeEl.classList.remove('hidden');
+    } else {
+      badgeEl.classList.add('hidden');
+    }
+
+    document.getElementById('detail-customize-btn').onclick = function() {
+      closeProductDetail();
+      openModal(p.name, p.price);
+    };
+
+    const related = Object.values(PRODUCTS).filter(x => x.category === p.category && x.name !== p.name);
+    const relatedWrap = document.getElementById('detail-related');
+    const relatedSection = document.getElementById('detail-related-wrap');
+    if (related.length) {
+      relatedSection.classList.remove('hidden');
+      relatedWrap.innerHTML = related.map(r => `
+        <button class="flex-shrink-0 w-28 text-left" onclick="openProductDetail('${r.name.replace(/'/g, "\\'")}')">
+          <div class="w-28 h-28 rounded-lg overflow-hidden mb-2"><img class="w-full h-full object-cover" src="${r.img}" alt="${r.name}"></div>
+          <p class="font-body-sm text-body-sm text-on-surface line-clamp-1">${r.name}</p>
+          <p class="font-label-sm text-label-sm text-primary">₹${r.price.toFixed(0)}</p>
+        </button>
+      `).join('');
+    } else {
+      relatedSection.classList.add('hidden');
+    }
+
+    const modal = document.getElementById('product-detail-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.getElementById('detail-scroll-area').scrollTop = 0;
+    requestAnimationFrame(() => {
+      modal.classList.remove('opacity-0');
+      document.getElementById('detail-modal-content').classList.remove('scale-95');
+    });
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeProductDetail = function() {
+    const modal = document.getElementById('product-detail-modal');
+    modal.classList.add('opacity-0');
+    document.getElementById('detail-modal-content').classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }, 300);
+    document.body.style.overflow = '';
+  };
+
+  buildProductCatalog();
 
   function updateCartCount() {
     const count = cart.reduce((sum, item) => sum + item.qty, 0);
